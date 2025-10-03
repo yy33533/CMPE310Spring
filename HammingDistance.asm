@@ -36,6 +36,8 @@ section .txt
         mov byte al, [DATA1]
 
         mov byte bl, [DATA2]
+
+        mov byte ax, 0
             
         ;jmp LOOP
 
@@ -47,7 +49,9 @@ section .txt
             jne LOOP
             je OUT
 
-            cmp 
+            xor [al+cl], [bl+cl]
+
+            inc byte ax, [al+cl]
 
         OUT:
 
