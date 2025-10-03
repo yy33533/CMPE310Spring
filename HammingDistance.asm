@@ -134,7 +134,7 @@ section .txt
 
         cmp eax, LENGTH2
 
-        ja SETFIRST
+        jae SETFIRST
 
         jb SETSECOND
 
