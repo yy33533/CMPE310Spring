@@ -14,7 +14,7 @@ section .data
 
     ;RETURN:
 
-    OUTPUTLENGTH: equ $-OUTPUT
+    ;OUTPUTLENGTH: equ $-OUTPUT
 
     ;jmp PRINT
 
