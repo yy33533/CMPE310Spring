@@ -46,7 +46,7 @@ section .txt
 
             xor al, bl
 
-            inc ax, al
+            add ax, al
 
             cmp cl, dl
             ;inc [cl]
