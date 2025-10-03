@@ -8,6 +8,16 @@ section .data
 
     LENGTH2: equ $-DATA2
 
+    OUTPUT: db 0
+
+    jmp main
+
+    RETURN:
+
+        OUTPUTLENGTH: equ $-OUTPUT
+
+        jmp PRINT
+
 ;section .bss
 
 
@@ -16,7 +26,6 @@ global main
 section .txt
 
     main:
-
 
         cmp LENGTH1, LENGTH2
 
@@ -57,7 +66,25 @@ section .txt
 
         ;OUT:
 
-        in 0x80
+        mov [OUTPUT], ax
+
+        jmp RETURN
+
+        PRINT:
+
+            mov eax, 4
+
+            mov ebx, 1
+
+            mov ecx, OUTPUT
+
+            mov edx, OUTPUTLENGTH
+
+            int 0x80
+
+            mov eax, 1
+
+            int 0x80
 
         
 
