@@ -20,17 +20,41 @@ section .txt
 
         cmp LENGTH1, LENGTH2
 
-        ja 
+        jae SETFIRST
 
-        jbe
-
-
+        jbe SETSECOND
 
 
-        SETFIRST:
 
-        mov cl, 
 
-        SETNEXT:
+        SETFIRST: mov dl, LENGTH1
+
+        SETSECOND: mov dl, LENGTH2
+
+        mov cl, 0
+
+        mov byte al, [DATA1]
+
+        mov byte bl, [DATA2]
+            
+        ;jmp LOOP
+
+        LOOP:
+
+            cmp cl, dl
+            ;inc [cl]
+            inc cl    ;cl is 0 here and goes to 1
+            jne LOOP
+            je OUT
+
+            cmp 
+
+        OUT:
+
+
+
+            
+
+        
 
 
