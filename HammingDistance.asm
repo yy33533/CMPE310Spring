@@ -79,7 +79,7 @@ section .txt
 
         mov ecx, OUTPUT
 
-        mov edx, (equ $- OUTPUT)
+        mov edx, equ $- OUTPUT
 
         int 0x80
 
