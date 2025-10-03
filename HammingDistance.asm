@@ -73,19 +73,19 @@ section .txt
 
         ;PRINT:
 
-            mov eax, 4
+        mov eax, 4
 
-            mov ebx, 1
+        mov ebx, 1
 
-            mov ecx, OUTPUT
+        mov ecx, OUTPUT
 
-            mov edx, equ $- OUTPUT
+        mov edx, (equ $- OUTPUT)
 
-            int 0x80
+        int 0x80
 
-            mov eax, 1
+        mov eax, 1
 
-            int 0x80
+        int 0x80
 
         
 
