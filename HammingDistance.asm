@@ -33,29 +33,33 @@ section .txt
 
         mov cl, 0
 
-        mov byte al, [DATA1]
-
-        mov byte bl, [DATA2]
-
-        mov byte ax, 0
+        
+        mov ax, 0
             
         ;jmp LOOP
 
         LOOP:
 
+            mov byte al, [DATA1+cl]
+
+            mov byte bl, [DATA2+cl]
+
+            xor al, bl
+
+            inc ax, al
+
             cmp cl, dl
             ;inc [cl]
+
             inc cl    ;cl is 0 here and goes to 1
             jne LOOP
-            je OUT
+            ;je OUT
 
-            xor [al+cl], [bl+cl]
+        ;OUT:
 
-            inc byte ax, [al+cl]
+        in 0x80
 
-        OUT:
-
-
+        
 
             
 
