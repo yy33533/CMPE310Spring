@@ -43,7 +43,10 @@ section .txt
 
         mov cl, 0
 
-        
+        mov al, 0
+
+        mov bl, 0
+
         mov ax, 0
             
         ;jmp LOOP
